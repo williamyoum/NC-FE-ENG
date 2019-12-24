@@ -9,7 +9,6 @@ export default function BeerTable(props){
                     <th>
                         <button
                             onClick = {() => props.sortBy('abv')}
-                            
                         >ABV level</button>
                     </th>
                     <th>IBU level</th>

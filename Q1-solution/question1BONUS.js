@@ -12,13 +12,13 @@ var LIMIT = 10;
 var sayNetCapital = function(LIMIT){
 
     for(let i = 1; i <= LIMIT; i++){
-        let mult2= i%2;
-        mult2.toString;
-        let mult3= i%3;
-        mult3.toString;
-        let mult2and3= i%6;
-        mult2and3.toString;
-        let zero = 0;
+        // let mult2= i%2;
+        // mult2.toString;
+        // let mult3= i%3;
+        // mult3.toString;
+        // let mult2and3= i%6;
+        // mult2and3.toString;
+        // let zero = 0;
 
         if(mult2.equals(zero)){
             if(mult2and3.equals(zero)){

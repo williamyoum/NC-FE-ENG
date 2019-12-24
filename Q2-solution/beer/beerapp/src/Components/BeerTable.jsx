@@ -2,24 +2,50 @@ import React from 'react';
 
 export default function BeerTable(props){
     return(
-        <table>
+        <table className = "beerTable">
             <thead>
                 <tr>
                     <th>Name</th>
                     <th>
+                        ABV levels
                         <button
-                            onClick = {() => props.sortBy('abv')}
-                        >ABV level</button>
+                            onClick = {() => props.abvSortUp()}>
+                            low to high
+                        </button>
+                        <button 
+                            onClick = {() => props.abvSortDown()}>
+                            high to low
+                        </button>
                     </th>
-                    <th>IBU level</th>
-                    <th>pH levels</th>
+                    <th>
+                        IBU levels
+                        <button
+                            onClick = {() => props.ibuSortUp()}>
+                            low to high
+                        </button>
+                        <button 
+                            onClick = {() => props.ibuSortDown()}>
+                            high to low
+                        </button>
+                    </th>
+                    <th>
+                        pH levels
+                        <button
+                            onClick = {() => props.phSortUp()}>
+                            low to high
+                        </button>
+                        <button 
+                            onClick = {() => props.phSortDown()}>
+                            high to low
+                        </button>
+                    </th>
                     <th>Food pairing</th>
 
                 </tr>
             </thead>
             <tbody>
                 {
-                    props.beers.map(row =>(
+                    props.data.map(row =>(
                         <tr>
                             <td>{row.name}</td>
                             <td>{row.abv}%</td>

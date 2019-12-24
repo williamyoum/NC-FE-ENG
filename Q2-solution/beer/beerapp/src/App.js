@@ -8,45 +8,122 @@ class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      beers: [],
+      data: [],
       isLoaded: false, 
     }
     // this.data = this.data.bind(this);
-    this.sortBy = this.sortBy.bind(this);
+    this.abvSortUp = this.abvSortUp.bind(this);
+    this.abvSortDown = this.abvSortDown.bind(this);
+    this.ibuSortUp = this.ibuSortUp.bind(this);
+    this.ibuSortDown = this.ibuSortDown.bind(this);
+    this.phSortUp = this.phSortUp.bind(this);
+    this.phSortDown = this.phSortDown.bind(this);
   }
 
+  abvSortUp() {
+    const dataForSort = this.state.data;
 
-  // sortBy(key) {
+    dataForSort.sort((a,b) => {
+      const abvA = a.abv;
+      const abvB = b.abv;
 
-  //   this.setState({
-  //     data: [].sort((a,b) => {
-  //       console.log(typeof parseFloat(a[key]))
-  //       return parseFloat(a[key]) > parseFloat(b[key])
-  //     })
-  //   })
-  // }
+      if (abvA > abvB) return 1;
+      if (abvA < abvB) return -1;
 
-  sortBy(key){
-    this.setState(prevState =>{
-      console.log(key);
-      this.state.data.sort((a,b) => (a.key - b.key))
+      return 0;
     });
+    this.setState({data: dataForSort});
+  }
+
+  abvSortDown() {
+    const dataForSort = this.state.data;
+
+    dataForSort.sort((a,b) => {
+      const abvA = a.abv;
+      const abvB = b.abv;
+
+      if (abvA < abvB) return 1;
+      if (abvA > abvB) return -1;
+
+      return 0;
+    });
+    this.setState({data: dataForSort});
+  }
+
+  ibuSortUp() {
+    const dataForSort = this.state.data;
+
+    dataForSort.sort((a,b) => {
+      const abvA = a.ibu;
+      const abvB = b.ibu;
+
+      if (abvA > abvB) return 1;
+      if (abvA < abvB) return -1;
+
+      return 0;
+    });
+    this.setState({data: dataForSort});
+  }
+
+  ibuSortDown() {
+    const dataForSort = this.state.data;
+
+    dataForSort.sort((a,b) => {
+      const abvA = a.ibu;
+      const abvB = b.ibu;
+
+      if (abvA < abvB) return 1;
+      if (abvA > abvB) return -1;
+
+      return 0;
+    });
+    this.setState({data: dataForSort});
+  }
+
+  phSortUp() {
+    const dataForSort = this.state.data;
+
+    dataForSort.sort((a,b) => {
+      const abvA = a.ph;
+      const abvB = b.ph;
+
+      if (abvA > abvB) return 1;
+      if (abvA < abvB) return -1;
+
+      return 0;
+    });
+    this.setState({data: dataForSort});
+  }
+
+  phSortDown() {
+    const dataForSort = this.state.data;
+
+    dataForSort.sort((a,b) => {
+      const abvA = a.ph;
+      const abvB = b.ph;
+
+      if (abvA < abvB) return 1;
+      if (abvA > abvB) return -1;
+
+      return 0;
+    });
+    this.setState({data: dataForSort});
   }
 
   componentDidMount(){
     fetch(API)
       .then(response => response.json())
-      .then(data => {
+      .then(json => {
           this.setState({
             isLoaded: true,
-            beers: data.beers,
+            data: json,
           })
       });
   }
 
   render(){
 
-    var { isLoaded, data} = this.state;
+    const {data, isLoaded} = this.state;
     if(!isLoaded){
       return <div>Brewing... </div>;
     }
@@ -54,8 +131,13 @@ class App extends Component{
       return(
         <div className = "App">
           <BeerTable 
-          beers = {this.state.beers}
-          sortBy = {this.sortBy}
+          data = {this.state.data}
+          abvSortUp = {this.abvSortUp}
+          abvSortDown = {this.abvSortDown}
+          ibuSortUp = {this.ibuSortUp}
+          ibuSortDown = {this.ibuSortDown}
+          phSortUp = {this.phSortUp}
+          phSortDown = {this.phSortDown}
           />
         </div>
        

@@ -49,14 +49,45 @@
 }
 
 body{
-  background-color: rgb(228, 167, 92);
   color: black;
   font-size: 10pt;
+
+  background: #ada996; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.table{
-  border: aqua;
+.beerTable{
+  border: 1px black;
   color: black;
-  display: inline-block;
+  /* display: inline-block; */
+  text-align: left;
+  
+}
+
+button {
+  background-color: rgb(64, 161, 235); /* Green */
+  border: none;
+  color: white;
+  padding: 10px 10px;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color:rgb(79, 133, 174); /* Green */
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+h1{
+  text-align: center;
+  font-size: 45pt;
 }

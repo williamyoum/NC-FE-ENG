@@ -130,6 +130,9 @@ class App extends Component{
     else{
       return(
         <div className = "App">
+          <div className = "beerIcon">
+          <a href = "App.js"><img src = "./favicon.ico" alt = "beer icon"></img></a>
+          </div>
           <BeerTable 
           data = {this.state.data}
           abvSortUp = {this.abvSortUp}

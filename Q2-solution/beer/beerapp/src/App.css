@@ -1,7 +1,7 @@
 .App {
   text-align: center;
 }
-
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -27,7 +27,7 @@
 .App-link {
   color: #61dafb;
 }
-
+/* 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,7 +35,7 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */ */
 
 .list{
   list-style: none;
@@ -51,43 +51,52 @@
 body{
   color: black;
   font-size: 10pt;
-
   background: #ada996; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ada996, #f2f2f2, #dbdbdb, #eaeaea); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to right, #b1a56c, #f2f2f2, #dbdbdb, #eaeaea); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .beerTable{
   border: 1px black;
   color: black;
-  /* display: inline-block; */
+  display: block;
   text-align: left;
-  
+  margin: 5% 20% 10% 20%;
 }
 
 button {
-  background-color: rgb(64, 161, 235); /* Green */
+  background-color: rgb(63, 158, 231); /* Green */
   border: none;
   color: white;
   padding: 10px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 button:hover {
-  background-color:rgb(79, 133, 174); /* Green */
+  background-color:rgb(83, 118, 144); /* Green */
   border: none;
   color: white;
   padding: 10px 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 12px;
 }
+
 
 h1{
   text-align: center;
   font-size: 45pt;
+}
+
+thead{
+  background-color: #8f8f90;
+  border: 1px black;
+}
+
+.beerIcon{
+  display: block;
+  /* align-self: center; */
 }

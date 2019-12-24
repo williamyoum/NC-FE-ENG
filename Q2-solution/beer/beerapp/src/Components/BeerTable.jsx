@@ -8,34 +8,28 @@ export default function BeerTable(props){
                     <th>Name</th>
                     <th>
                         ABV levels
-                        <button
-                            onClick = {() => props.abvSortUp()}>
+                        <button onClick = {() => props.abvSortUp()}>
                             low to high
                         </button>
-                        <button 
-                            onClick = {() => props.abvSortDown()}>
+                        <button onClick = {() => props.abvSortDown()}>
                             high to low
                         </button>
                     </th>
                     <th>
                         IBU levels
-                        <button
-                            onClick = {() => props.ibuSortUp()}>
+                        <button onClick = {() => props.ibuSortUp()}>
                             low to high
                         </button>
-                        <button 
-                            onClick = {() => props.ibuSortDown()}>
+                        <button onClick = {() => props.ibuSortDown()}>
                             high to low
                         </button>
                     </th>
                     <th>
                         pH levels
-                        <button
-                            onClick = {() => props.phSortUp()}>
+                        <button onClick = {() => props.phSortUp()}>
                             low to high
                         </button>
-                        <button 
-                            onClick = {() => props.phSortDown()}>
+                        <button onClick = {() => props.phSortDown()}>
                             high to low
                         </button>
                     </th>
@@ -44,7 +38,7 @@ export default function BeerTable(props){
                 </tr>
             </thead>
             <tbody>
-                {
+                { 
                     props.data.map(row =>(
                         <tr>
                             <td>{row.name}</td>

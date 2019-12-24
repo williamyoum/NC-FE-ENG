@@ -3,11 +3,13 @@
 But for multiples of two print “Net” instead of the number 
 and for the multiples of three print “capital”.
 
-For numbers which are multiples of both two and three print “Netcapital”. */
+For numbers which are multiples of both two and three print “Netcapital”. 
+*/
 
 
 // set N
 var LIMIT = Number.parseInt(process.argv[2]);
+
 // declare function that iteraters 1 to N. 
 var sayNetCapital = function(LIMIT){
     // iterate from 1 to the set LIMIT "N"

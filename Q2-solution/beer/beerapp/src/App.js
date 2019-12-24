@@ -14,115 +14,43 @@ class App extends Component{
       isLoaded: false,
     }
     // bind this keyword for all functions used. 
-    this.abvSortUp = this.abvSortUp.bind(this);
-    this.abvSortDown = this.abvSortDown.bind(this);
-    this.ibuSortUp = this.ibuSortUp.bind(this);
-    this.ibuSortDown = this.ibuSortDown.bind(this);
-    this.phSortUp = this.phSortUp.bind(this);
-    this.phSortDown = this.phSortDown.bind(this);
+    this.sortBy = this.sortBy.bind(this);
+    this.downSortBy = this.downSortBy.bind(this);
   }
-
-  // a to z sort for name
-  // nameSortUp(){
-  //   const dataForSort = this.state.data;
-
-  //   dataForSort.sort((a,b) => {
-  //     const
-  //   })
-  // }
-
-
-
-  // ascending sort for abv
-  abvSortUp() {
-    const dataForSort = this.state.data;
-
+  // ascending sort passing key as parameter
+    // key holds the tag for data.$
+  sortBy(key){
+    const dataForSort =  this.state.data;
     dataForSort.sort((a,b) => {
-      const abvA = a.abv;
-      const abvB = b.abv;
+      const objA = a[key];
+      const objB = b[key];
+      console.log(a[key])
 
-      if (abvA > abvB) return 1;
-      if (abvA < abvB) return -1;
+      if(objA < objB) return -1;
+      if(objA > objB) return 1;
 
       return 0;
     });
     this.setState({data: dataForSort});
   }
-  // descending sort for abv
-  abvSortDown() {
-    const dataForSort = this.state.data;
 
-    dataForSort.sort((a,b) => {
-      const abvA = a.abv;
-      const abvB = b.abv;
+  // descending sort passing key as parameter
+    // same thing with key
+    downSortBy(key){
+      const dataForSort =  this.state.data;
+      dataForSort.sort((a,b) => {
+        const objA = a[key];
+        const objB = b[key];
+        console.log(a[key])
+  
+        if(objA < objB) return 1;
+        if(objA > objB) return -1;
+  
+        return 0;
+      });
+      this.setState({data: dataForSort});
+    }
 
-      if (abvA < abvB) return 1;
-      if (abvA > abvB) return -1;
-
-      return 0;
-    });
-    this.setState({data: dataForSort});
-  }
-  // ascending ibu sort
-  ibuSortUp() {
-    const dataForSort = this.state.data;
-
-    dataForSort.sort((a,b) => {
-      const ibuA = a.ibu;
-      const ibuB = b.ibu;
-
-      if (ibuA > ibuB) return 1;
-      if (ibuA < ibuB) return -1;
-
-      return 0;
-    });
-    this.setState({data: dataForSort});
-  }
-  // descending ibu
-  ibuSortDown() {
-    const dataForSort = this.state.data;
-
-    dataForSort.sort((a,b) => {
-      const ibuA = a.ibu;
-      const ibuB = b.ibu;
-
-      if (ibuA < ibuB) return 1;
-      if (ibuA > ibuB) return -1;
-
-      return 0;
-    });
-    this.setState({data: dataForSort});
-  }
-  // ascending ph level sort
-  phSortUp() {
-    const dataForSort = this.state.data;
-
-    dataForSort.sort((a,b) => {
-      const phA = a.ph;
-      const phB = b.ph;
-
-      if (phA > phA) return 1;
-      if (phA < phB) return -1;
-
-      return 0;
-    });
-    this.setState({data: dataForSort});
-  }
-  // descending ph level sort
-  phSortDown() {
-    const dataForSort = this.state.data;
-
-    dataForSort.sort((a,b) => {
-      const phA = a.ph;
-      const phB = b.ph;
-
-      if (phA < phB) return 1;
-      if (phA > phB) return -1;
-
-      return 0;
-    });
-    this.setState({data: dataForSort});
-  }
   // if App renders, fetch the data from API link
     // lifecycle method: fetch + api call 
   componentDidMount(){
@@ -142,7 +70,7 @@ class App extends Component{
     // if data is loaded, pass props to BeerTable.
     // if data is not loaded, state "Brewing..." aka loading data. 
         // this should not take more than a second anyway
-    const {data, isLoaded} = this.state;
+    const {isLoaded} = this.state;
     if(!isLoaded){
       return <div>Brewing... </div>;
     }
@@ -155,12 +83,8 @@ class App extends Component{
           <BeerTable 
           // pass props to BeerTable component
           data = {this.state.data}
-          abvSortUp = {this.abvSortUp}
-          abvSortDown = {this.abvSortDown}
-          ibuSortUp = {this.ibuSortUp}
-          ibuSortDown = {this.ibuSortDown}
-          phSortUp = {this.phSortUp}
-          phSortDown = {this.phSortDown}
+          sortBy = {this.sortBy}
+          downSortBy = {this.downSortBy}
           />
         </div>
        

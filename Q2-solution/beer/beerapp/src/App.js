@@ -24,14 +24,14 @@ class App extends Component{
     dataForSort.sort((a,b) => {
       const objA = a[key];
       const objB = b[key];
-      console.log(a[key])
 
-      if(objA < objB) return -1;
       if(objA > objB) return 1;
+      if(objA < objB) return -1;
 
       return 0;
     });
     this.setState({data: dataForSort});
+    console.log(dataForSort);
   }
 
   // descending sort passing key as parameter
@@ -41,7 +41,6 @@ class App extends Component{
       dataForSort.sort((a,b) => {
         const objA = a[key];
         const objB = b[key];
-        console.log(a[key])
   
         if(objA < objB) return 1;
         if(objA > objB) return -1;
@@ -50,6 +49,7 @@ class App extends Component{
       });
       this.setState({data: dataForSort});
     }
+
 
   // if App renders, fetch the data from API link
     // lifecycle method: fetch + api call 
@@ -77,17 +77,21 @@ class App extends Component{
     else{
       return(
         <div className = "App">
-          <div className = "beerIcon">
-          <a href = "App.js"><img src = "./favicon.ico" alt = "beer icon"></img></a>
-          </div>
-          <BeerTable 
-          // pass props to BeerTable component
-          data = {this.state.data}
-          sortBy = {this.sortBy}
-          downSortBy = {this.downSortBy}
-          />
+            <div className = "top-container">
+              <div id = "beerIcon">
+                <a href = "App.js"><img src = "./favicon.ico" alt = "beer icon"></img></a>
+              </div> 
+              <div id = "title">
+                <h1 className = "title">Brewtopia</h1>
+              </div>
+            </div>
+            <BeerTable 
+            // pass props to BeerTable component
+            data = {this.state.data}
+            sortBy = {this.sortBy}
+            downSortBy = {this.downSortBy}
+            />
         </div>
-       
       )
     }
   }

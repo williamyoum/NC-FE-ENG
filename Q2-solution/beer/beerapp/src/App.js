@@ -22,6 +22,17 @@ class App extends Component{
     this.phSortDown = this.phSortDown.bind(this);
   }
 
+  // a to z sort for name
+  // nameSortUp(){
+  //   const dataForSort = this.state.data;
+
+  //   dataForSort.sort((a,b) => {
+  //     const
+  //   })
+  // }
+
+
+
   // ascending sort for abv
   abvSortUp() {
     const dataForSort = this.state.data;
@@ -57,11 +68,11 @@ class App extends Component{
     const dataForSort = this.state.data;
 
     dataForSort.sort((a,b) => {
-      const abvA = a.ibu;
-      const abvB = b.ibu;
+      const ibuA = a.ibu;
+      const ibuB = b.ibu;
 
-      if (abvA > abvB) return 1;
-      if (abvA < abvB) return -1;
+      if (ibuA > ibuB) return 1;
+      if (ibuA < ibuB) return -1;
 
       return 0;
     });
@@ -72,11 +83,11 @@ class App extends Component{
     const dataForSort = this.state.data;
 
     dataForSort.sort((a,b) => {
-      const abvA = a.ibu;
-      const abvB = b.ibu;
+      const ibuA = a.ibu;
+      const ibuB = b.ibu;
 
-      if (abvA < abvB) return 1;
-      if (abvA > abvB) return -1;
+      if (ibuA < ibuB) return 1;
+      if (ibuA > ibuB) return -1;
 
       return 0;
     });
@@ -87,11 +98,11 @@ class App extends Component{
     const dataForSort = this.state.data;
 
     dataForSort.sort((a,b) => {
-      const abvA = a.ph;
-      const abvB = b.ph;
+      const phA = a.ph;
+      const phB = b.ph;
 
-      if (abvA > abvB) return 1;
-      if (abvA < abvB) return -1;
+      if (phA > phA) return 1;
+      if (phA < phB) return -1;
 
       return 0;
     });
@@ -102,11 +113,11 @@ class App extends Component{
     const dataForSort = this.state.data;
 
     dataForSort.sort((a,b) => {
-      const abvA = a.ph;
-      const abvB = b.ph;
+      const phA = a.ph;
+      const phB = b.ph;
 
-      if (abvA < abvB) return 1;
-      if (abvA > abvB) return -1;
+      if (phA < phB) return 1;
+      if (phA > phB) return -1;
 
       return 0;
     });

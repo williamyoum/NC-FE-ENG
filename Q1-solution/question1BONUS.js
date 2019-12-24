@@ -10,22 +10,15 @@ var LIMIT = Number.parseInt(process.argv[2]);
 
 var sayNetCapital = function(LIMIT){
     for(let i = 1; i <= LIMIT; i++){
-        let isMult2 = i%2;
-        let mult2String = isMult2.toString;
-        let isMult3= i%3;
-        let mult3String = isMult3.toString;
-        let isMult2and3= i%6;
-        let mult6String = isMult2and3.toString;
-        let zero = "0";
-        if(mult2String.equals(zero)){
-            if(mult6String.equals(zero)){
+        if(!(i%2)){
+            if(!(i%3)){
                 console.log("Netcapital");
             }
             else{
                 console.log("Net");
             }
         }
-        else if(mult3String.equals(zero)){
+        else if(!(i%3)){
             console.log("capital");
         }
         else{

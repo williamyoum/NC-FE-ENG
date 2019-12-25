@@ -9,12 +9,9 @@ function BeerTable(props){
                 <thead>
                     <tr>
                         <th>
-                            <div className= "category">
-                                Name
-                            </div>
+                            <div className= "category">Name</div>
 
-                        {/*create buttons that call the respective functions for sorting*/}
-                            
+                            {/*create buttons that call the respective functions for sorting*/}
                             <div className = "sortButtons">
                                 <button onClick = {() => props.sortBy('name')}> A -> Z
                                     </button>
@@ -23,15 +20,10 @@ function BeerTable(props){
                             </div>
                         </th>
                         <th>
-                            <div className= "category">
-                                Tagline
-                            </div>                            
+                            <div className= "category">Tagline</div>                            
                         </th>
                         <th>
-                            <div className= "category">
-                                ABV levels
-                            </div>         
-                            
+                            <div className= "category">ABV levels</div>         
                             <div className = "sortButtons">
                                 <button onClick = {() => props.sortBy('abv')}>  Sort Low
                                     </button>
@@ -40,9 +32,7 @@ function BeerTable(props){
                             </div>
                         </th>
                         <th>
-                            <div className= "category">
-                                IBU levels
-                            </div>     
+                            <div className= "category">IBU levels</div>     
                             <div className = "sortButtons">
                                 <button onClick = {() => props.sortBy('ibu')}>  Sort Low
                                     </button>
@@ -51,9 +41,7 @@ function BeerTable(props){
                             </div>
                         </th>
                         <th>
-                            <div className= "category">
-                                pH levels
-                            </div>         
+                            <div className= "category">pH levels</div>         
                             <div className = "sortButtons">
                                 <button onClick = {() => props.sortBy('ph')}>  Sort Low
                                     </button>
@@ -61,9 +49,7 @@ function BeerTable(props){
                                     </button>    
                             </div>
                         </th>
-                        <th>
-                            Food pairing
-                        </th>
+                        <th>Food pairing</th>
                     </tr>
                 </thead>
                     <tbody>
@@ -82,7 +68,7 @@ function BeerTable(props){
                                 </tr>    
                             ))
                         }
-                </tbody>
+                    </tbody>
             </table>
         </div>
     )

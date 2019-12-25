@@ -10,7 +10,6 @@ Don't use comparison operators
 ****
 */
 
-
 // set N
 var LIMIT = Number.parseInt(process.argv[2]);
 

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import BeerTable from './Components/BeerTable.jsx'
+import NewPage from './Components/NewPage.js'
+import Search from './Components/Search.js'
 
 const API = 'https://api.punkapi.com/v2/beers?page=1&per_page=80';
 
@@ -16,6 +18,7 @@ class App extends Component{
     // bind this keyword for all functions used. 
     this.sortBy = this.sortBy.bind(this);
     this.downSortBy = this.downSortBy.bind(this);
+    this.newPageCallback = this.newPageCallback.bind(this);
   }
   // ascending sort passing key as parameter
     // key holds the tag for data.$
@@ -36,20 +39,24 @@ class App extends Component{
 
   // descending sort passing key as parameter
     // same thing with key
-    downSortBy(key){
-      const dataForSort =  this.state.data;
-      dataForSort.sort((a,b) => {
-        const objA = a[key];
-        const objB = b[key];
-  
-        if(objA < objB) return 1;
-        if(objA > objB) return -1;
-  
-        return 0;
-      });
-      this.setState({data: dataForSort});
-    }
+  downSortBy(key){
+    const dataForSort =  this.state.data;
+    dataForSort.sort((a,b) => {
+      const objA = a[key];
+      const objB = b[key];
 
+      if(objA < objB) return 1;
+      if(objA > objB) return -1;
+
+      return 0;
+    });
+    this.setState({data: dataForSort});
+  }
+  
+  newPageCallback = (dataFromChild) =>{
+    // data from child for new set state
+    this.setState({data: dataFromChild});
+  }
 
   // if App renders, fetch the data from API link
     // lifecycle method: fetch + api call 
@@ -72,7 +79,7 @@ class App extends Component{
         // this should not take more than a second anyway
     const {isLoaded} = this.state;
     if(!isLoaded){
-      return <div>Brewing... </div>;
+      return <p>Brewing...</p>;
     }
     else{
       return(
@@ -85,12 +92,21 @@ class App extends Component{
                 <h1 className = "title">Brewtopia</h1>
               </div>
             </div>
+            {/* <Search /> */}
             <BeerTable 
-            // pass props to BeerTable component
-            data = {this.state.data}
-            sortBy = {this.sortBy}
-            downSortBy = {this.downSortBy}
+              // pass props to BeerTable component
+              data = {this.state.data}
+              sortBy = {this.sortBy}
+              downSortBy = {this.downSortBy}
             />
+            <NewPage 
+              callbackFromParent = {this.newPageCallback}
+            />
+            <div id = "panel-photos">
+            </div>
+            <div className = "info">
+              <p className = "myName">@William Youm</p>
+            </div>
         </div>
       )
     }

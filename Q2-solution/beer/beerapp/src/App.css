@@ -1,5 +1,6 @@
 .App{
   text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .list{
   list-style: none;
@@ -7,7 +8,7 @@
   text-align: left;
 }
 .data-container{
-  margin: 1% 20% 10% 20%;
+  margin: 1% 20% 0% 20%;
 }
 .beerPic{
   height: 100px;
@@ -21,22 +22,31 @@ body{
   background: linear-gradient(to top, #b1a56c, #b1a56c, #b1a56c, #eaeaea); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.myName {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
 .beerTable{
   border: 1px black;
   color: black;
   display: block;
   text-align: left;
+
+  border-collapse: collapse;
+  border: 1px solid rgb(1, 1, 1);
 }
 
 button {
   background-color: rgb(174, 174, 174); /* Green */
   border: none;
   color: white;
-  padding: 10px 10px;
+  padding: 0 10px;
   text-align: center;
   text-decoration: none;
-  display: flex;
-  font-size: 12px;
+  display: block;
+  font-size: 10px;
   outline: none;
 }
 
@@ -44,16 +54,23 @@ button:hover {
   background-color:rgb(83, 118, 144); /* Green */
   border: none;
   color: white;
-  padding: 10px 10px;
+  padding: 0 10px;
   text-align: center;
   text-decoration: none;
   display: flex;
-  font-size: 12px;
+  font-size: 10px;
 }
 
-tr{
-  background-color: #dfdede;
-  border: 10px black;
+th, td, tr{
+  border: 1px solid rgb(128, 128, 128);
+}
+
+/* .category{
+  display: inline-block;
+} */
+
+.sortButtons{
+  display: inline-block;
 }
 
 .top-container{
@@ -75,7 +92,6 @@ tr{
 }
 
 @media only screen and (max-width: 700px){
-
   body{
     /* background: #dccd90;  */
     background: linear-gradient(to top, #93895a, #b1a56c, #b1a56c, #ede6c0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -86,15 +102,81 @@ tr{
     color: black;
     display: block;
     text-align: left;
-    width: 50%;
   }
 
   .data-container{
-    margin: 1% 10% 10% 10%;
+    margin: 1% 10% 0% 10%;
   }
 
   #beerIcon{
     display:none;
   }
   
+}
+
+#newPage{
+  display: block;
+  width: 60%;
+  height: 100px;
+  margin: 0 0 20px 20%;
+}
+
+.form-control{
+  width: 50%;
+  height: 40px;
+  display: inline-block;
+  outline: none;
+}
+
+
+
+/* Drop Down */
+
+.dropbtn {
+  background-color: rgba(175, 144, 76, 0.664);
+  color: white;
+  padding: 16px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  height: 30%;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  height: 30%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: rgba(175, 168, 154, 0.404);
 }

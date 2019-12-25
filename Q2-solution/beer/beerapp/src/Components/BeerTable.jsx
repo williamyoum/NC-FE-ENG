@@ -8,33 +8,58 @@ function BeerTable(props){
             <table className = "beerTable">
                 <thead>
                     <tr>
-                        <th>Name
-                            <button onClick = {() => props.sortBy('name')}> A -> Z
-                                </button>
-                            <button onClick = {() => props.downSortBy('name')}>  Z -> A
-                                </button>
-                        </th>
+                        <th>
+                            <div className= "category">
+                                Name
+                            </div>
+
                         {/*create buttons that call the respective functions for sorting*/}
-                        <th>
-                            ABV levels
-                            <button onClick = {() => props.sortBy('abv')}>  sort ascending
-                                </button>
-                            <button onClick = {() => props.downSortBy('abv')}>  sort descending
-                                </button>
+                            
+                            <div className = "sortButtons">
+                                <button onClick = {() => props.sortBy('name')}> A -> Z
+                                    </button>
+                                <button onClick = {() => props.downSortBy('name')}>  Z -> A
+                                    </button>    
+                            </div>
                         </th>
                         <th>
-                            IBU levels
-                            <button onClick = {() => props.sortBy('ibu')}>  sort ascending
-                                </button>
-                            <button onClick = {() => props.downSortBy('ibu')}>  sort descending
-                                </button>
+                            <div className= "category">
+                                Tagline
+                            </div>                            
                         </th>
                         <th>
-                            pH levels
-                            <button onClick = {() => props.sortBy('ph')}>  sort ascending
-                                </button>
-                            <button onClick = {() => props.downSortBy('ph')}>  sort descending
-                                </button>
+                            <div className= "category">
+                                ABV levels
+                            </div>         
+                            
+                            <div className = "sortButtons">
+                                <button onClick = {() => props.sortBy('abv')}>  Sort Low
+                                    </button>
+                                <button onClick = {() => props.downSortBy('abv')}>  Sort High
+                                    </button>    
+                            </div>
+                        </th>
+                        <th>
+                            <div className= "category">
+                                IBU levels
+                            </div>     
+                            <div className = "sortButtons">
+                                <button onClick = {() => props.sortBy('ibu')}>  Sort Low
+                                    </button>
+                                <button onClick = {() => props.downSortBy('ibu')}>  Sort High
+                                    </button>    
+                            </div>
+                        </th>
+                        <th>
+                            <div className= "category">
+                                pH levels
+                            </div>         
+                            <div className = "sortButtons">
+                                <button onClick = {() => props.sortBy('ph')}>  Sort Low
+                                    </button>
+                                <button onClick = {() => props.downSortBy('ph')}>  Sort High
+                                    </button>    
+                            </div>
                         </th>
                         <th>
                             Food pairing
@@ -49,6 +74,7 @@ function BeerTable(props){
                                 <tr>
                                     {/* display categories by key in respective columns */}
                                     <td>{row.name}</td>
+                                    <td>{row.tagline}</td>
                                     <td>{row.abv}%</td>
                                     <td>{row.ibu}</td>
                                     <td>{row.ph}</td>

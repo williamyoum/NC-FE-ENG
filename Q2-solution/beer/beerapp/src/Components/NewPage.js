@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 
 const API = 'https://api.punkapi.com/v2/beers?page=1&per_page=80';
 
+// this NewPage component is pretty much hard coded for the page after page1
+    // imo, this is a bug and must be fixed
 class NewPage extends Component {
     loadNewData = () =>{
         // take the API link as a parameter, edit the ?page=$

@@ -51,7 +51,7 @@ class App extends Component{
     });
     this.setState({data: dataForSort});
   }
-  
+
   newPageCallback = (dataFromChild) =>{
     // data from child for new set state
     this.setState({data: dataFromChild});

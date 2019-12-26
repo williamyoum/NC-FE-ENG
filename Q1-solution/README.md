@@ -2,6 +2,7 @@
 ## Setup:
 ● Download and install node:
 https://nodejs.org/en/download/
+
 ● Update npm (node package manager):
   npm install npm@latest -g
 
